@@ -1,0 +1,5 @@
+export const USER_ACTION = {
+	LOGIN: 'LOGIN',
+	ADD_USER_COOKIE: 'ADD_USER_COOKIE',
+	LOGOUT: 'LOGOUT'
+}
