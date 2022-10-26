@@ -12,8 +12,8 @@ export const routes = createBrowserRouter([
 		path: '/login',
 		element: <LoginPage />
 	},
-  {
-    path: '/private',
-    element: <PrivatePage />
-  }
+	{
+		path: '/private',
+		element: <PrivatePage />
+	}
 ])

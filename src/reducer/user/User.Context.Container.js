@@ -8,8 +8,7 @@ const UserContextContainer = props => {
 	const [store, dispatch] = useReducer(UserReducer, UserDefaultState)
 	const userProps = {
 		state: store,
-		addUser: (type, user) => dispatch({ type: type, user: user }),
-		login: (type, user) => dispatch({ type: type, user: user }),
+		login: user => dispatch({ type: USER_ACTION.LOGIN, user: user }),
 		logout: () => dispatch({ type: USER_ACTION.LOGOUT })
 	}
 	return (

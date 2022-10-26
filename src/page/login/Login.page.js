@@ -4,43 +4,31 @@ import { Grid } from '@mui/material'
 import { UserContext } from '../../reducer/user/User.Context'
 import { useNavigate } from 'react-router-dom'
 import { USER_ACTION } from '../../reducer/user/User.Action'
+import Layouts from '../../component/layout/page/Layouts'
 
 const LoginPage = () => {
-  console.log("---- LoginPage is rendering ---")
-  const userCTX = useContext(UserContext)
-  const navigate = useNavigate()
-  useEffect(() => {
-    const credential = localStorage.getItem('credential')
-    if (userCTX.state.userId !== null || credential !== null) {
-      const validToken = true
-      if (validToken) {
-        if (userCTX.state.userId === null) {
-          userCTX.addUser(USER_ACTION.ADD_USER_COOKIE, credential)
-        }
-        console.log("Authentication success !")
-        navigate('/')
-      }
-    }
-  }, [])
+	console.log('---- LoginPage is rendering ---')
+	const userCTX = useContext(UserContext)
+	const navigate = useNavigate()
+	useEffect(() => {
+		if (userCTX.state.userId !== null) {
+			navigate('/')
+		}
+	}, [userCTX.state.userId])
 
-  const onClickLogin = (e) => {
-    userCTX.addUser(USER_ACTION.ADD_USER_COOKIE, {
-      userId: '123',
-      accessToken: 'Token 01234'
-    })
-  }
+	const onClickLogin = e => {
+		userCTX.login({
+			userId: '123',
+			accessToken: 'Token 01234'
+		})
+	}
 
 	return (
 		<>
-      <LayoutHeader />
-      <Grid container spacing={0.5}>
-        <Grid xs={2} />
-        <Grid xs={8}>
-          <p> This is login page </p>
-          <button onClick={onClickLogin}>Login</button>
-        </Grid>
-        <Grid xs={2} />
-      </Grid>
+			<Layouts>
+				<p> This is login page </p>
+				<button onClick={onClickLogin}>Login</button>
+			</Layouts>
 		</>
 	)
 }
