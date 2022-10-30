@@ -21,8 +21,8 @@ const Layouts = props => {
 				method: 'POST',
 				mode: 'cors',
 				body: JSON.stringify({
-          refreshToken: json.refreshToken
-        })
+					refreshToken: json.refreshToken
+				})
 			}).then(response => {
 				if (response.status === 200) {
 					userCTX.login(json)

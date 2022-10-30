@@ -40,7 +40,6 @@ const LoginPage = () => {
 				}
 			})
 			.then(data => {
-        console.log(data)
 				userCTX.login(data)
 			})
 	}
