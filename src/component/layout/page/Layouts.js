@@ -2,25 +2,36 @@ import React, { useContext, useEffect } from 'react'
 import LayoutHeader from '../header/Layout.Header'
 import { Grid } from '@mui/material'
 import { UserContext } from '../../../reducer/user/User.Context'
+import { API_DOMAIN } from '../../../util/Constant'
 
 const Layouts = props => {
 	console.log(`--- Layoust component is rendering ---`)
 	const userCTX = useContext(UserContext)
 	useEffect(() => {
 		const credential = localStorage.getItem('credential')
-		if (userCTX.state.userId !== null || credential !== null) {
-			// TODO: Fetch API valid token here
-			const validToken = true
-			if (!validToken) {
-				// Token is inspired
-				userCTX.logout()
-			}
-			userCTX.login({
-				userId: '123',
-				accessToken: 'Token 01234'
+		if (
+			userCTX.state.id !== null ||
+			(credential !== null && credential !== undefined)
+		) {
+			const json = JSON.parse(credential)
+			fetch(`${API_DOMAIN}/api/auth/refreshtoken`, {
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				method: 'POST',
+				mode: 'cors',
+				body: JSON.stringify({
+          refreshToken: json.refreshToken
+        })
+			}).then(response => {
+				if (response.status === 200) {
+					userCTX.login(json)
+				} else {
+					userCTX.logout()
+				}
 			})
 		}
-	}, [userCTX.state.userId])
+	}, [userCTX.state.id])
 
 	return (
 		<>

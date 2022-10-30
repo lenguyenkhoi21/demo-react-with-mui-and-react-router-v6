@@ -8,36 +8,38 @@
 }
 
 .button-search {
+  cursor: pointer;
   background-image: url("./img_header_search_icon.svg");
   background-repeat: no-repeat;
-  background-size: 35px 35px;
-  height: 35px;
-  width: 35px;
+  background-size: 45px 45px;
+  height: 45px;
+  width: 45px;
 }
 
-.button-abc:hover {
+.button-search:hover {
   background-image: url("./img_header_search_icon_hover.svg");
   background-repeat: no-repeat;
-  background-size: 35px 35px;
-  height: 35px;
-  width: 35px;
+  background-size: 45px 45px;
+  height: 45px;
+  width: 45px;
 }
 
 .input-search {
   margin-left: 10px;
   border: none;
-  height: 35px;
+  height: 45px;
   outline: none;
   width: 100%;
 }
 
 .button-add-your-space {
+  cursor: pointer;
   font-weight: bold;
   font-size: 14px;
   line-height: 32px;
   text-transform: uppercase;
   border-radius: 2px;
-  height: 35px;
+  height: 45px;
   width: 200px;
   border: 1px solid #EDF4F2;
   color: #00927c !important;
@@ -51,13 +53,14 @@
 }
 
 .button-sign-up {
+  cursor: pointer;
   margin-left: 10px;
   font-weight: bold;
   font-size: 14px;
   line-height: 32px;
   text-transform: uppercase;
   border-radius: 2px;
-  height: 35px;
+  height: 45px;
   width: 109px;
   border: 1px solid #00c78a;
   color: #FFFFFF;
@@ -71,13 +74,14 @@
 }
 
 .button-sign-in {
+  cursor: pointer;
   margin-left: 10px;
   font-weight: bold;
   font-size: 14px;
   line-height: 32px;
   text-transform: uppercase;
   border-radius: 2px;
-  height: 35px;
+  height: 45px;
   width: 109px;
   border: 1px solid #00c78a;
   color: #FFFFFF;
@@ -96,10 +100,28 @@
 }
 
 .profile-user {
-  padding: 3px;
+  padding: 4px;
   margin-left: 10px;
-  width: 155px;
+  min-width: 155px;
   border-radius: 2px;
   border: 1px solid #d7e4df;
-  height: 35px;
+  height: 45px;
+  cursor: pointer;
+}
+
+.user-name {
+  color: #00927c !important;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 32px;
+  font-family: 'Work Sans', sans-serif;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width:100px;
+}
+
+.profile-user:hover {
+  background-color: #FFFFFF;
+  box-shadow: 1px 1px 1px 1px #d6cfc7;
 }

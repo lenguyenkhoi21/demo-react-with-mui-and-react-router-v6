@@ -8,10 +8,10 @@ const PrivatePage = () => {
 	const userCTX = useContext(UserContext)
 	const navigate = useNavigate()
 	useEffect(() => {
-		if (userCTX.state.userId === null) {
+		if (userCTX.state.id === null) {
 			navigate('/login')
 		}
-	}, [userCTX.state.userId])
+	}, [userCTX.state.id])
 
 	return (
 		<>

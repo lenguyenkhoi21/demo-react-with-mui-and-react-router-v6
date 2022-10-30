@@ -7,7 +7,7 @@ export const UserReducer = (state, action) => {
 			localStorage.setItem('credential', JSON.stringify(action.user))
 			return { ...action.user }
 		case USER_ACTION.LOGOUT:
-			localStorage.removeItem('data')
+			localStorage.removeItem('credential')
 			return { ...UserDefaultState }
 		default:
 			return state

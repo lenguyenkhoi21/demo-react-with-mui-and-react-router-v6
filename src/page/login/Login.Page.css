@@ -1,0 +1,76 @@
+.input-login-container {
+  border: 1px solid #cad2d0;
+  background-color: #fff;
+  border-radius: 2px;
+  box-sizing: border-box;
+  padding: 0 10px 0 50px;
+}
+
+.input-login-text {
+  width: 300px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 60px;
+  outline: none;
+  border: none
+}
+
+.input-login-icon {
+  background-image: url("./username.png");
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  height: 30px;
+  width: 30px;
+  margin-right: 30px;
+}
+
+.input-password-icon {
+  background-image: url("./password.png");
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  height: 30px;
+  width: 30px;
+  margin-right: 30px;
+}
+
+.button-login-container {
+  display: inline-block;
+  border: none;
+  background-color: #00927c;
+  text-align: center;
+  height: 50px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 16px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.login-form-container {
+  width: 525px;
+  padding: 40px 50px 30px;
+}
+
+.input-login-container-username {
+  margin-bottom: 10px;
+}
+
+.input-login-container-password {
+  margin-bottom: 50px;
+}
+
+.input-title {
+  margin-bottom: 20px;
+}
+
+.input-title-text {
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 29px;
+  color: #464d4b;
+  font-family: "Work Sans",sans-serif;
+}
+
+.input-login-text::placeholder {
+  font-family: "Work Sans",sans-serif;
+}

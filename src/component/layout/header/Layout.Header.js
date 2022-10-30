@@ -1,8 +1,9 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { Grid } from '@mui/material'
 import './Layout.Header.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { UserContext } from '../../../reducer/user/User.Context'
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 
 const LayoutHeader = () => {
 	console.log('---- LayoutHeader is rendering ---')
@@ -17,6 +18,11 @@ const LayoutHeader = () => {
 	const clickPrivateBtn = e => {
 		e.preventDefault()
 		navigate('/private')
+	}
+
+	const clickSignup = e => {
+		e.preventDefault()
+		navigate('/signup')
 	}
 
 	return (
@@ -50,43 +56,51 @@ const LayoutHeader = () => {
 								/>
 							</Grid>
 						</Grid>
-						<Grid xs={5} display={'flex'} justifyContent={'flex-end'}>
-							<Grid display={'flex'} alignItems={'center'}>
-								<Grid>
-									<button className={'button-add-your-space'}>
-										+ &nbsp;&nbsp; add your space
-									</button>
-								</Grid>
-								{userCTX.state.userId === null ? (
-									<>
-										<Grid>
-											<button
-												className={'button-sign-up'}
-												onClick={clickPrivateBtn}>
-												sign up
-											</button>
-										</Grid>
-										<Grid>
-											<button
-												className={'button-sign-in'}
-												onClick={clickLoginBtn}>
-												login
-											</button>
-										</Grid>
-									</>
-								) : (
-									<>
-										<Grid
-											className={'profile-user'}
-											display={'flex'}
-                      justifyContent={'space-between'}
-											alignItems={'center'}>
-                      <p>fadf</p>
-											<img src={'/profile-user.png'} width={25} height={25} />
-										</Grid>
-									</>
-								)}
+						<Grid
+							xs={5}
+							display={'flex'}
+							justifyContent={'flex-end'}
+							alignItems={'center'}>
+							<Grid>
+								<button
+									className={'button-add-your-space'}
+									onClick={clickPrivateBtn}>
+									+ &nbsp;&nbsp; add your space
+								</button>
 							</Grid>
+							{userCTX.state.id === null ? (
+								<>
+									<Grid>
+										<button className={'button-sign-up'} onClick={clickSignup}>
+											sign up
+										</button>
+									</Grid>
+									<Grid>
+										<button
+											className={'button-sign-in'}
+											onClick={clickLoginBtn}>
+											login
+										</button>
+									</Grid>
+								</>
+							) : (
+								<>
+									<Grid
+										className={'profile-user'}
+										display={'flex'}
+										justifyContent={'space-between'}
+										alignItems={'center'}>
+										<Grid
+											display={'flex'}
+											justifyContent={'space-between'}
+											alignItems={'center'}>
+											<span className={'user-name'}>Muhamad Abiniti</span>
+											<ArrowDropDownIcon />
+										</Grid>
+										<img src={'/photo-cover.jpg'} width={25} height={25} />
+									</Grid>
+								</>
+							)}
 						</Grid>
 					</Grid>
 				</Grid>
